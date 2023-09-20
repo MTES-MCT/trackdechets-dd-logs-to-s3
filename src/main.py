@@ -40,6 +40,6 @@ async def post(req: Request):
 
     s3object = resource.Object(bucket_name, fn)
 
-    s3object.put(Body=body, ACL="public-read")
+    s3object.put(Body=body)
 
     return {"result": "ok"}
