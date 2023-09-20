@@ -1,0 +1,38 @@
+[tool.ruff]
+line-length = 119
+select = [
+    "E", # pycodestyle
+    "F", # pyflakes
+    "I", # isort
+]
+fixable = ["ALL"]
+unfixable = []
+exclude = [
+    ".bzr",
+    ".direnv",
+    ".eggs",
+    ".git",
+    ".git-rewrite",
+    ".hg",
+    ".mypy_cache",
+    ".nox",
+    ".pants.d",
+    ".pytype",
+    ".ruff_cache",
+    ".svn",
+    ".tox",
+    ".venv",
+    "__pypackages__",
+    "_build",
+    "buck-out",
+    "build",
+    "dist",
+    "node_modules",
+    "venv",
+]
+target-version = "py310"
+[tool.ruff.mccabe]
+max-complexity = 10
+
+[tool.ruff.isort]
+known-third-party = ["dotenv", "fastapi", "starlette"]
