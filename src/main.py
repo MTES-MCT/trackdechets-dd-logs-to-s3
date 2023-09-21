@@ -1,4 +1,5 @@
 import datetime as dt
+import logging
 import os
 from typing import Annotated
 
@@ -19,10 +20,14 @@ slug = os.environ.get("SLUG")
 username = os.environ.get("BASIC_AUTH_USERNAME")
 password = os.environ.get("BASIC_AUTH_PASSWORD")
 
+logging.warning(region)
+logging.warning(bucket_name)
+logging.warning(bucket_name)
+logging.warning(access_key_id)
+
 app = FastAPI()
 
 security = HTTPBasic()
-
 
 resource = boto3.resource(
     "s3",
