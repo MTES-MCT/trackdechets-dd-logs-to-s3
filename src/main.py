@@ -55,8 +55,8 @@ async def post(req: Request, credentials: Annotated[HTTPBasicCredentials, Depend
         )
 
     body = await req.body()
-
-    object_path = f"datadog-{dt.datetime.now().timestamp()}.zip"
+    now = dt.datetime.now()
+    object_path = f"/{now:%Y/%m/%d}/datadog-{now.timestamp()}.zip"
 
     s3object = resource.Object(bucket_name, object_path)
 
